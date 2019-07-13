@@ -23,6 +23,20 @@ application.get("/scrape", function(req, res){
     
     //Start with an axios. Axios is used to grab the body of the html. 
     axios.get("https://old.reddit.com/").then(function(response){
+        console.log("This is a scrape");
+
+        //Set up the cheerio package. Helps us sort through data retrieved from axios. 
+        var $ = cheerio.load(response.data);
+
+        $(".title").each(function(i, element){
+
+            var articles = {};
+            articles.title = $(this).text();
+            articles.url = $(this).attr("href");
+
+            console.log(articles);
+
+        })
 
     })
     
