@@ -12,6 +12,13 @@ var db = require("./models");
 var application = express();
 var PORT = process.env.PORT || 3000;
 
+//To log our requests, we should use morgan logger
+application.use(logger("dev"));
+//Parse the JSON necessary
+application.use(express.urlencoded({extended: true}));
+application.use(express.json);
+application.use(express.static("public"));
+
 //Connect Mongoose
 mongoose.connect("mongodb://localhost/WebScraper", {useNewUrlParser: true});
 
