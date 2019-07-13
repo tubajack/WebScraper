@@ -41,13 +41,19 @@ application.get("/scrape", function(req, res){
             articles.title = $(this).text();
             articles.url = $(this).attr("href");
 
+            //Create a new artice based on the results from scraping
+            db.Article.create(result)
+            .then(function(dbArticle){
+
+            })
+            .catch(function(error){
+
+            }) 
+
             console.log(articles);
-
-        })
-
-    })
-    
-    res.json("");
+        });
+    });
+    res.send("Scrape is complete");
 })
 
 //Start the server. Make sure it is ready to go. 
