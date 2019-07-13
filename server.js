@@ -11,3 +11,8 @@ var db = require("./models");
 //Set up the express application 
 var application = express();
 var PORT = process.env.PORT || 3000;
+
+//Start the server. Make sure it is ready to go. 
+application.listen(PORT, function(){
+    console.log("App is running on port: " + PORT + "!");
+})
