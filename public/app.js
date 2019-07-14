@@ -6,3 +6,12 @@ $.getJSON("/articles", function(data){
     }
 
 });
+
+//What will happen if we decide to click a p tag
+$(document).on("click", "p", function(){
+    //Empty all of our notes from the p section
+    $("#notes").empty();
+    //Save the id from the p tag
+    var CurrentID = $(this).attr("data-id");
+
+});
