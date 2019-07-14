@@ -48,6 +48,13 @@ $(document).on("click", "#savenote", function(){
             body: $("#bodyinput").val()
         }
     })
+    //Once this is done
+    .then(function(data){
+        //Log the data
+        console.log(data);
+        //Then empty all of the notes
+        ("#notes").empty();
+    })
 
     //Remove the values entered in the note and text arrays when finished
     $("#titleinput").val("");
