@@ -14,4 +14,13 @@ $(document).on("click", "p", function(){
     //Save the id from the p tag
     var CurrentID = $(this).attr("data-id");
 
+
+    //What if we have a note in the article? 
+    if(data.note){
+        //Title goes in the title section
+        $("#titleinput").val(data.note.title);
+        //Body goes in the body section
+        $("#bodyinput").val(data.note.body);
+    }
+
 });
