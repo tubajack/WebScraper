@@ -44,16 +44,17 @@ application.get("/scrape", function(req, res){
             //Create a new artice based on the results from scraping
             db.Article.create(result)
             .then(function(dbArticle){
-
+                //View the result in the console
+                console.log(dbArticle);
             })
             .catch(function(error){
-
-            }) 
-
+                //Report that there was an error
+                console.log(error);
+            }); 
             console.log(articles);
         });
+        res.send("Scrape is complete");
     });
-    res.send("Scrape is complete");
 })
 
 //Start the server. Make sure it is ready to go. 
