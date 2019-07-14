@@ -32,3 +32,9 @@ $(document).on("click", "p", function(){
         }
     });
 });
+
+//Click the save note button
+$(document).on("click", "#savenote", function(){
+    //Grab the ID associated with the article from the submit button
+    var CurrentID = $(this).attr("data-id");
+})
