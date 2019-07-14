@@ -37,4 +37,15 @@ $(document).on("click", "p", function(){
 $(document).on("click", "#savenote", function(){
     //Grab the ID associated with the article from the submit button
     var CurrentID = $(this).attr("data-id");
+
+    //Run a POST method. This changes the note entered in the inputs
+    $.ajax({
+        method: "POST", 
+        url: "/articles" + CurrentID, 
+        data: {
+            //Values taken from the title and body inputs
+            title: $("#titleinput").val(), 
+            body: $("#bodyinput").val()
+        }
+    })
 })
