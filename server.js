@@ -62,7 +62,7 @@ application.get("/articles", function(req, res){
     //Get al of the articles
     db.Article.find({})
     .then(function(dbArticle){
-        //If we are able to find an error, send it to the client
+        //If we are able to find articles, report the articles found
         res.json(dbArticle);
     })
     .catch(function(error){
