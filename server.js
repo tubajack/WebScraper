@@ -57,8 +57,18 @@ application.get("/scrape", function(req, res){
     });
 })
 
-//This routs is going to get all articles from the database
+//This route is going to get all articles from the database
 application.get("/articles", function(req, res){
+    //Get al of the articles
+    db.Article.find({})
+    .then(function(dbArticle){
+        //If we are able to find an error, send it to the client
+        res.json(dbArticle);
+    })
+    .catch(function(error){
+        //If an error happens, let the client know
+        res.json(error);
+    })
 
 });
 
