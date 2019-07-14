@@ -100,9 +100,11 @@ application.post("/articles/:id", function(req, res){
 
     })
     .then(function(dbArticle){
+        //If we were successful in updating the article, let the client know
 
     })
     .catch(function(error){
+        //If an error happened, let the client know
 
     });
 });
