@@ -74,6 +74,10 @@ application.get("/articles", function(req, res){
 
 //This route is for grabbing a specific article by id
 application.get("/articles/:id", function(req, res){
+    //Using the id found in the parameter, find the query that matches the one in our db
+    db.Article.findOne({_id: req.params.id})
+    //populate all associated notes
+    .populate("note")
 
 });
 
