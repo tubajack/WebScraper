@@ -48,4 +48,8 @@ $(document).on("click", "#savenote", function(){
             body: $("#bodyinput").val()
         }
     })
+
+    //Remove the values entered in the note and text arrays when finished
+    $("#titleinput").val("");
+    $("#bodyinput").val("");
 })
