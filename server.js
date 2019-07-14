@@ -57,6 +57,21 @@ application.get("/scrape", function(req, res){
     });
 })
 
+//This routs is going to get all articles from the database
+application.get("/articles", function(req, res){
+
+});
+
+//This route is for grabbing a specific article by id
+application.get("/articles/:id", function(req, res){
+
+});
+
+//This route is for updating an article's associated note
+application.post("/articles/:id", function(req, res){
+
+});
+
 //Start the server. Make sure it is ready to go. 
 application.listen(PORT, function(){
     console.log("App is running on port: " + PORT + "!");
