@@ -92,6 +92,11 @@ application.post("/articles/:id", function(req, res){
     //First we are going to create a new note. Then we are going to pass req.body to the entry
     db.Note.create(req.body)
     .then(function(dbNote){
+        //What we are going to do is if a note was successfully created, find an article with _id related to req.params.id
+        //Update the article to be associated with new note. 
+        //{new: true}. We want to return the updated user. The original is returned by default 
+        //The mongoose query is returning a promise. This means that we are able to chain another .then, which returns the results of the query
+        return db.Article.findOneAndUpdate({_id: req.params.id}, {note: dbNote._id}, {new: true})
 
     })
     .then(function(dbArticle){
