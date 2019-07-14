@@ -68,8 +68,7 @@ application.get("/articles", function(req, res){
     .catch(function(error){
         //If an error happens, let the client know
         res.json(error);
-    })
-
+    });
 });
 
 //This route is for grabbing a specific article by id
@@ -79,12 +78,13 @@ application.get("/articles/:id", function(req, res){
     //populate all associated notes
     .populate("note")
     .then(function(dbArticle){
-
+        //If we successfully found an article, let the client know
+        res.json(dbArticle);
     })
     .catch(function(error){
-
+        //Also let the client know if we failed to find any articles
+        res.json(error);
     });
-
 });
 
 //This route is for updating an article's associated note
