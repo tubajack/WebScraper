@@ -10,13 +10,16 @@ var NewArticleSchema = new Schema({
     //2 of them: title and link are of type string
     //The other one, note is an object
     title: {
-
+        type: String, 
+        required: true
     },
     link: {
-
+        type: String, 
+        required: true
     },
     note: {
-
+        type: Schema.Types.ObjectId, 
+        ref: "Note"
     }
 });
 
