@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+//Grab each of these articles as JSON
+$.getJSON("/articles", function(data){
 
-//Export the Article model when finished
-module.exports = Article;
+});
