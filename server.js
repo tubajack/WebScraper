@@ -106,6 +106,7 @@ application.post("/articles/:id", function(req, res){
     })
     .catch(function(error){
         //If an error happened, let the client know
+        res.json(error);
 
     });
 });
