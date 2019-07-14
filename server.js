@@ -78,6 +78,12 @@ application.get("/articles/:id", function(req, res){
     db.Article.findOne({_id: req.params.id})
     //populate all associated notes
     .populate("note")
+    .then(function(dbArticle){
+
+    })
+    .catch(function(error){
+
+    });
 
 });
 
