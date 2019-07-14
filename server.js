@@ -89,7 +89,17 @@ application.get("/articles/:id", function(req, res){
 
 //This route is for updating an article's associated note
 application.post("/articles/:id", function(req, res){
+    //First we are going to create a new note. Then we are going to pass req.body to the entry
+    db.Note.create(req.body)
+    .then(function(dbNote){
 
+    })
+    .then(function(dbArticle){
+
+    })
+    .catch(function(error){
+
+    });
 });
 
 //Start the server. Make sure it is ready to go. 
